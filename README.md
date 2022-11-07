@@ -8,6 +8,7 @@ Front-end:
 - React
 - Axios
 - CSS
+- react-testing-library
 
 Back-end:
 - Java 8
