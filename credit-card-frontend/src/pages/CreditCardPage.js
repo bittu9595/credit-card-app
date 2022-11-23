@@ -42,8 +42,8 @@ const CreditCardPage = (props) => {
    * @param {*} event - input event.
    */
   const handleInputChange = (event) => {
-    let obj = { [event.target.name]: event.target.value };
-    setCard(() => ({ ...card, ...obj }));
+    let cardObj = { [event.target.name]: event.target.value };
+    setCard(() => ({ ...card, ...cardObj }));
   };
   /**
    * Function to check if the form is valid or not.
@@ -75,10 +75,15 @@ const CreditCardPage = (props) => {
    */
   const addCreditCard = async () => {
     if (isFormValid()) {
+      const modifiedCreditCardNumber = card.cardNumber.replace(/ /g, "");
+      const creditCard = {
+        ...card,
+        cardNumber: modifiedCreditCardNumber,
+      };
       try {
-        const response = await axios.post(apiUrl.creditCardUrl, card);
+        const response = await axios.post(apiUrl.creditCardUrl, creditCard);
         if (response.status === 200) {
-          setCardList([...cardList, card]);
+          setCardList([...cardList, creditCard]);
           setCard({
             cardHolderName: "",
             cardNumber: "",
