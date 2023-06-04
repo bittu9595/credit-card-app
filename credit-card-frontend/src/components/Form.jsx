@@ -1,6 +1,9 @@
 /**
  * Form Component to display credit card form.
  */
+/**
+ * Learning rebase. Adding more comments after rebase.
+ */
 import React from "react";
 
 const Form = (props) => {
