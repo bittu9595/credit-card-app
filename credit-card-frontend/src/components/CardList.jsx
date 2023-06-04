@@ -1,6 +1,9 @@
 /**
  * List Component to display cards in table view.
  */
+/**
+ * Adding more comments to learn rebase.
+ */
 import React from "react";
 import Table from "./Table";
 
